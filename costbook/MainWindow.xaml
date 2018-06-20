@@ -1,0 +1,34 @@
+﻿<Window x:Class="costbook.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:costbook"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="400" KeyDown="Window_KeyDown" Closed="Window_Closed" Loaded="Window_Loaded" >
+    <Grid>
+       
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <!--To dos-->
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel x:Name="DODO">
+                <StackPanel x:Name="TodoStack">
+                    <local:taskbox Loaded="taskbox_Loaded"></local:taskbox>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+
+        <Grid Grid.Row="2">
+            <StackPanel Orientation="Horizontal" Background="DarkOrange">
+                <Button Width="50" FontSize="30" Background="White" Foreground="DarkOrange">+</Button>
+                <TextBlock FontSize="20" Foreground="White" VerticalAlignment="Top">總支出</TextBlock>
+                <TextBlock FontSize="30" Foreground="White" HorizontalAlignment="Right" Height="50"  VerticalAlignment="Top" x:Name="Total">0</TextBlock>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
